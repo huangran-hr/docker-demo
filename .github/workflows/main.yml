@@ -46,3 +46,18 @@ jobs:
       with:
         name: Package
         path: staging
+
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: huangran/hr
+        uese: ./Dockerfile
+        publish: true
+        imageName: huangran/hr
+        platform: linux/amd64
+        tag: latest
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        #registry: index.docker.io
+        tag_names: true
+        cache: true
