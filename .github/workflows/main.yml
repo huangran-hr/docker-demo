@@ -55,10 +55,8 @@ jobs:
       with:
         name: huangran/hr
         dockerfile: ./Dockerfile
-        publish: true
-        imageName: huangran/hr
-        platform: linux/amd64
-        tag: latest
+        tag_names: huangran/hr
+        tags: latest
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         #registry: index.docker.io
