@@ -1,0 +1,8 @@
+server:
+  port: 8181
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.43/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: dev_member
+    password: dev123456
