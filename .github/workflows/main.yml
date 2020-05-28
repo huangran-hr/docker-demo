@@ -54,7 +54,7 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: huangran/hr
-        uese: ./Dockerfile
+        dockerfile: ./Dockerfile
         publish: true
         imageName: huangran/hr
         platform: linux/amd64
