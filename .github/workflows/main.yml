@@ -55,7 +55,7 @@ jobs:
       with:
         name: huangran/hr
         dockerfile: ./Dockerfile
-        imageName: huangran/hr
+        buildargs: huangran/hr
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         #registry: index.docker.io
