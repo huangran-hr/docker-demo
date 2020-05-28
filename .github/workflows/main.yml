@@ -47,6 +47,9 @@ jobs:
         name: Package
         path: staging
 
+    - name: get value
+      run: ls && find / -name *.jar
+
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
