@@ -17,7 +17,6 @@
 	<properties>
 		<java.version>1.8</java.version>
 
-		<docker.image.prefix>huangran</docker.image.prefix>
 		<!-- docker hub镜像仓库地址 -->
 		<docker.repostory>huangran/hr</docker.repostory>
 		<!-- 阿里云 docker镜像仓库地址 -->
@@ -99,8 +98,7 @@
 					<!--Dockerfile目录指定 -->
 					<dockerfile>${project.basedir}/Dockerfile</dockerfile>
 					<repository>${docker.repostory}</repository>
-					<tag>0.0.1</tag>
-					<imageTag>0.0.2</imageTag>
+					<tag>${docker.image.tag}</tag>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
