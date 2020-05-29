@@ -35,31 +35,35 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
 
     # Runs a single command using the runners shell
-    - name: package
-      run: mvn -B package --file pom.xml
+#     - name: package
+#       run: mvn -B package --file pom.xml
 
     # Runs a set of commands using the runners shell
-    - name: Copy file
-      run: mkdir staging && cp target/*.jar staging
+#     - name: Copy file
+#       run: mkdir staging && cp target/*.jar staging
       
-    - uses: actions/upload-artifact@v1
-      with:
-        name: Package
-        path: staging
+#     - uses: actions/upload-artifact@v1
+#       with:
+#         name: Package
+#         path: staging
 
     - name: get value
       run: find . -name docker-demo.jar
 
     - name: Publish to Registry
 #       uses: elgohr/Publish-Docker-Github-Action@master
-      uses: mvn clean package docker:build -DpushImage
-      with:
+      run: mvn clean package docker:build -DpushImage
+      
+    
+    - name: get value
+      run: find . -name docker-demo.jar
+#       with:
 #         name: huangran/hr
 #         dockerfile: ./Dockerfile
 #         buildargs: huangran/hr
 #         username: ${{ secrets.DOCKER_USERNAME }}
 #         password: ${{ secrets.DOCKER_PASSWORD }}
-        #registry: index.docker.io
-        tag_names: latest
-        cache: true
-        snapshot: true
+#         #registry: index.docker.io
+#         tag_names: latest
+#         cache: true
+#         snapshot: true
