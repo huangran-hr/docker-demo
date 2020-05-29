@@ -87,9 +87,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<goals>
-					<goal>tag</goal>
-				</goals>
 				<groupId>com.spotify</groupId>
 				<!-- 这里使用新版dockerfile-maven-plugin插件 -->
 				<artifactId>dockerfile-maven-plugin</artifactId>
