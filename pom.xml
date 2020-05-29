@@ -97,7 +97,7 @@
 				<version>1.4.13</version>
 				<configuration>
 					<!--Dockerfile目录指定 -->
-					<dockerfile>src/main/docker/Dockerfile</dockerfile>
+					<dockerfile>${project.basedir}/Dockerfile</dockerfile>
 					<repository>${docker.repostory}/${project.artifactId}</repository>
 					<tag>${docker.image.tag}</tag>
 					<buildArgs>
