@@ -88,17 +88,20 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<goals>
+					<goal>tag</goal>
+				</goals>
 				<groupId>com.spotify</groupId>
 				<!-- 这里使用新版dockerfile-maven-plugin插件 -->
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.13</version>
 				<configuration>
 					<!--Dockerfile目录指定 -->
-					<docker>src/main/docker/Dockerfile</docker>
+					<dockerfile>src/main/docker/Dockerfile</dockerfile>
 					<repository>${docker.repostory}/${project.artifactId}</repository>
-					<tag>v1</tag>
+					<tag>0.0.1-SNAPSHOT</tag>
 					<imageTags>
-						<imageTag>${project.version}</imageTag>
+						<imageTag>1.01</imageTag>
 					</imageTags>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
