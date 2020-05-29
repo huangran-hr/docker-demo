@@ -94,7 +94,7 @@
 				<version>1.4.13</version>
 				<configuration>
 					<!--Dockerfile目录指定 -->
-					<dockerfile>src/main/docker/Dockerfile</dockerfile>
+					<docker>src/main/docker/Dockerfile</docker>
 					<repository>${docker.repostory}/${project.artifactId}</repository>
 					<tag>v1</tag>
 					<imageTags>
