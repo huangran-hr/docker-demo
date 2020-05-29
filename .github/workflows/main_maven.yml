@@ -47,12 +47,12 @@ jobs:
 #         name: Package
 #         path: staging
 
-    - name: get value
-      run: find . -name docker-demo.jar
+#     - name: get value
+#       run: find . -name docker-demo.jar
 
     - name: Publish to Registry
 #       uses: elgohr/Publish-Docker-Github-Action@master
-      run: mvn clean package dockerfile:build -DpushImage
+      run: mvn clean package dockerfile:build -DpushImageTag
     
     - name: get value
       run: find . -name docker-demo.jar
