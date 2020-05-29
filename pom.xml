@@ -111,7 +111,7 @@
 				<configuration>
 					<dockerfile>src/main/docker/Dockerfile</dockerfile>
 					<repository>${docker.repostory}/${project.artifactId}</repository>
-                    <tag>v1</tag>
+					<tag>${project.version}</tag>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
