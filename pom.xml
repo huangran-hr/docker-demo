@@ -92,6 +92,8 @@
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.13</version>
 				<configuration>
+                                        <username>huangran</username>
+					<password>huangran92.2.7</password>
 					<!--Dockerfile目录指定 -->
 					<dockerfile>${project.basedir}/Dockerfile</dockerfile>
 					<repository>${docker.repostory}</repository>
