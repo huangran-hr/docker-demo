@@ -52,7 +52,7 @@ jobs:
 
     - name: Publish to Registry
 #       uses: elgohr/Publish-Docker-Github-Action@master
-      run: mvn clean package dockerfile:build -DpushImageTag
+      run: mvn clean package dockerfile:build dockerfile:push -DpushImageTag
     
     - name: get value
       run: find . -name docker-demo.jar
