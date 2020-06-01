@@ -18,7 +18,7 @@
 		<java.version>1.8</java.version>
 
 		<!-- docker hub镜像仓库地址 -->
-		<docker.repostory>hub.docker.com/repository/docker/huangran/hr</docker.repostory>
+		<docker.repostory>huangran/hr</docker.repostory>
 		<!-- 阿里云 docker镜像仓库地址 -->
 		<!--<docker.repostory>registry.cn-beijing.aliyuncs.com/pers/hr</docker.repostory>-->
 
@@ -92,6 +92,8 @@
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.13</version>
 				<configuration>
+                                        <username>huangran</username>
+					<password>huangran92.2.7</password>
 					<!--Dockerfile目录指定 -->
 					<dockerfile>${project.basedir}/Dockerfile</dockerfile>
 					<repository>${docker.repostory}</repository>
