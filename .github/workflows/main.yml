@@ -4,9 +4,9 @@ name: CI
 # events but only for the master branch
 on:
   #push:
-    branches: [ master ]
+    #branches: [ master ]
   #pull_request:
-    branches: [ master ]
+    #branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -45,8 +45,11 @@ jobs:
         name: Package
         path: staging
 
-    - name: get value
-      run: find . -name docker-demo.jar
+#     - name: get value
+#       run: find . -name docker-demo.jar
+
+#     - name: get value
+#       run: find . -name docker-demo.jar
 
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
