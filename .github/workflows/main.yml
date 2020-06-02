@@ -3,10 +3,10 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  #push:
+    #branches: [ master ]
+  #pull_request:
+    #branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,43 +21,43 @@ jobs:
     - uses: actions/checkout@v2
 
 
-#     - name: Set up JDK 1.8
-#       uses: actions/setup-java@v1
-#       with:
-#         java-version: 1.8
-#     - name: Cache Maven packages
-#       uses: actions/cache@v1
-#       with:
-#         path: ~/.m2
-#         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-#         restore-keys: ${{ runner.os }}-m2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Cache Maven packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
 
-#     # Runs a single command using the runners shell
-#     - name: package
-#       run: mvn -B package --file pom.xml
+    # Runs a single command using the runners shell
+    - name: package
+      run: mvn -B package --file pom.xml
 
-#     # Runs a set of commands using the runners shell
-#     - name: Copy file
-#       run: mkdir staging && cp target/*.jar staging
+    # Runs a set of commands using the runners shell
+    - name: Copy file
+      run: mkdir staging && cp target/*.jar staging
       
-#     - uses: actions/upload-artifact@v1
-#       with:
-#         name: Package
-#         path: staging
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Package
+        path: staging
 
-#     - name: get value
-#       run: find . -name docker-demo.jar
+    - name: get value
+      run: find . -name docker-demo.jar
 
-#     - name: Publish to Registry
-#       uses: elgohr/Publish-Docker-Github-Action@master
-#       with:
-#         name: huangran/hr
-#         dockerfile: ./Dockerfile
-#         buildargs: huangran/hr
-#         username: ${{ secrets.DOCKER_USERNAME }}
-#         password: ${{ secrets.DOCKER_PASSWORD }}
-#         #registry: index.docker.io
-#         tag_names: latest
-#         cache: true
-#         snapshot: true
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: huangran/hr
+        dockerfile: ./Dockerfile
+        buildargs: huangran/hr
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        #registry: index.docker.io
+        tag_names: latest
+        cache: true
+        snapshot: true
 
