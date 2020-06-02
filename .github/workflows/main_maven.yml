@@ -50,12 +50,12 @@ jobs:
 #     - name: get value
 #       run: find . -name docker-demo.jar
 
-    - name: set mvn goal
-      run: mvn goal -Ddockerfile.username=${{ secrets.DOCKER_USERNAME }} -Ddockerfile.password=${{ secrets.DOCKER_PASSWORD }}
+#     - name: set mvn goal
+#       run: mvn 
 
     - name: Publish to Registry
 #       uses: elgohr/Publish-Docker-Github-Action@master
-      run: mvn clean package dockerfile:build dockerfile:push -Ddockerfile.tag=0.0.2
+      run: mvn clean package dockerfile:build dockerfile:push -Ddockerfile.username=${{ secrets.DOCKER_USERNAME }} -Ddockerfile.password=${{ secrets.DOCKER_PASSWORD }} dockerfile.tag=0.0.2
       
 #       with:
 #         name: huangran/hr
