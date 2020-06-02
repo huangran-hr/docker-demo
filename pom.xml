@@ -91,9 +91,17 @@
 				<!-- 这里使用新版dockerfile-maven-plugin插件 -->
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.13</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<!--如果package时不想用docker打包,就注释掉这个goal-->
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<username>huangran</username>
-					<password>huangran92.2.7</password>
 					<!--Dockerfile目录指定 -->
 					<dockerfile>${project.basedir}/Dockerfile</dockerfile>
 					<repository>${docker.repostory}</repository>
