@@ -48,6 +48,9 @@ jobs:
 #     - name: get value
 #       run: find . -name docker-demo.jar
 
+#     - name: get value
+#       run: find . -name docker-demo.jar
+
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
