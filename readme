@@ -1,0 +1,9 @@
+使用dockerfile-maven-plugin插件构建
+打包命令：mvn clean package dockerfile:build dockerfile:push
+
+使用jib插件构建
+参考：https://github.com/GoogleContainerTools/jib/blob/master/jib-maven-plugin/README.md#authentication-methods
+
+打包命令：mvn compile jib:build -Djib.to.auth.username=huangran -Djib.to.auth.password=huangran92.2.7
+
+运行命令：docker run --name docker-demo -p 8080:8080 -itd huangran/hr/docker-demo:0.0.1-SNAPSHOT
