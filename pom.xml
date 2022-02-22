@@ -114,54 +114,7 @@
 
 			</plugin>
 
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>2.4.0</version>
-				<configuration>
-					<container>
-						<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
-						<jvmFlags>
-							<jvmFlag>-Duser.timezone=Asia/Shanghai</jvmFlag>
-							<jvmFlag>-Djava.security.egd=file:/dev/./urandom</jvmFlag>
-							<!-- 使用apollo配置中心pro环境 这块在docker run 时指定，如果在这块指定，就写死了，故去掉
-							<jvmFlag>-Dapollo.configService=http://apollo-pro.mvmyun.com</jvmFlag>
-							-->
-						</jvmFlags>
-					</container>
-					<from>
-						<!--<image>harbor.mvmyun.com/library/openjdk:11.0.7-jre-slim</image>-->
-						<image>openjdk:8u262-slim-buster</image>
-					</from>
-					<to>
-						<!-- 使用 harbor 镜像仓库
-						<image>harbor.mvmyun.com/connectivity/${artifactId}</image>-->
-						<!-- 使用 dockerhub 镜像仓库-->
-						<image>${docker.repostory}</image>-->
-						<!--<auth>
-							<username>huangran</username>
-							<password>huangran92.2.7</password>
-						</auth>-->
-						<auth>
-							<username>${env.REGISTRY_USERNAME}</username>
-							<password>${env.REGISTRY_PASSWORD}</password>
-						</auth>
-						<tags>
-							<tag>latest</tag>
-							<tag>${project.version}</tag>
-						</tags>
-					</to>
-					<allowInsecureRegistries>true</allowInsecureRegistries>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>build</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			
 		</plugins>
 	</build>
 
