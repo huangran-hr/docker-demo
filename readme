@@ -7,3 +7,4 @@
 打包命令：mvn compile jib:build -Djib.to.auth.username=huangran -Djib.to.auth.password=huangran92.2.7
 
 运行命令：docker run --name docker-demo -p 8080:8080 -itd huangran/hr/docker-demo:0.0.1-SNAPSHOT
+
