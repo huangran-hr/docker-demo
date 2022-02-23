@@ -54,9 +54,10 @@ jobs:
 #       run: mvn 
 
     - name: Publish to Registry
-#       uses: elgohr/Publish-Docker-Github-Action@master
+
 #       run: mvn clean package dockerfile:build dockerfile:push -Ddockerfile.tag=0.0.2 -Ddockerfile.username=${{ secrets.DOCKER_USERNAME }} -Ddockerfile.password=${{ secrets.DOCKER_PASSWORD }}
       
+      uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: huangran/hr
         dockerfile: ./Dockerfile
