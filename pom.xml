@@ -142,15 +142,15 @@
 						<!-- 使用 harbor 镜像仓库
 						<image>harbor.mvmyun.com/connectivity/${artifactId}</image>-->
 						<!-- 使用 dockerhub 镜像仓库-->
-						<image>${docker.repostory}</image>-->
-						<auth>
+						<image>${docker.repostory}</image>
+						<!--<auth>
 							<username>huangran</username>
 							<password>huangran92.2.7</password>
-						</auth>
-						<!--<auth>
+						</auth>-->
+						<auth>
 							<username>${env.REGISTRY_USERNAME}</username>
 							<password>${env.REGISTRY_PASSWORD}</password>
-						</auth>-->
+						</auth>
 						<tags>
 							<tag>latest</tag>
 							<tag>${project.version}</tag>
