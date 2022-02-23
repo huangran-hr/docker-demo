@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 
 		<!-- docker hub镜像仓库地址 -->
 		<docker.repostory>huangran/hr</docker.repostory>
@@ -132,7 +132,7 @@
 					<from>
 						<!--<image>harbor.mvmyun.com/library/openjdk:11.0.7-jre-slim</image>-->
 						<!--<image>harbor.mvmyun.com/library/openjdk:8-jdk</image>-->
-						<image>openjdk:8-jdk</image>
+						<image>adoptopenjdk/openjdk11</image>
 						<!--<auth>
 							<username>admin</username>
 							<password>harbor123456</password>
