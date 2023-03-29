@@ -59,7 +59,7 @@ jobs:
     - name: Publish to Registry
       run: mvn clean package dockerfile:build dockerfile:push -Ddockerfile.tag=v0.0.1
       
-#       uses: elgohr/Publish-Docker-Github-Action@master
+#       uses: elgohr/Publish-Docker-Github-Action@v5
 #       with:
 #         name: huangran/hr
 #         dockerfile: ./Dockerfile
